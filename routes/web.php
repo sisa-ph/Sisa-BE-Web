@@ -1,6 +1,8 @@
 <?php
-
+use App\Http\Controllers\TranslatesController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/translate', [TranslatesController::class, 'index'])->name('translate');
+Route::get('/translate-query', [TranslatesController::class, 'translateQuery'])->name('translate.query');
