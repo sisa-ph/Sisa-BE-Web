@@ -19,9 +19,11 @@ class TranslatesController extends Controller
 
         $query = $request->input('query');
 
+        $qry = strtolower($query);
+
         $translates = Translate::query()
-            ->where('tagalog', 'LIKE', "%{$query}%")
-            ->orWhere('english', 'LIKE', "%{$query}%")
+            ->where('tagalog', '=', $qry)
+            ->orWhere('english', '=', $qry)
             ->get();
 
             return view('translate.translate', compact('translates','query'));

@@ -10,10 +10,7 @@
 <body>
     <div class="query-form">
         <form action="{{ route('translate.query') }}" method="GET">
-            <textarea  name="query" id="query" rows="4" cols="50" maxlength="200" required >
-                    {{$query }}
-            </textarea>
-
+            <input type="text" name="query" id="query" value=" {{$query }}" required>
             <button type="submit" >Translate</button>
         </form>
 
@@ -21,11 +18,11 @@
 
     <div class="bicol-form">
         <form action="">
-            <textarea placeholder="bicol" name="bicol" id="bicol" crows="4" cols="50" maxlength="200" >
-                    @foreach ($translates as $translate)
-                        {{ $translate->bicol }}
-                    @endforeach
-            </textarea>
+            <input type="text" value="@forelse($translates as $translate)
+            {{ $translate->bicol }}
+            @empty
+            Not found
+        @endforelse" placeholder="bicol" name="bicol" id="bicol" >
         </form>
 
     </div>

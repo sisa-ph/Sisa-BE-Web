@@ -10,10 +10,7 @@
 <body>
     <div class="query-form">
         <form action="{{ route('translate.query') }}" method="GET">
-            <textarea  name="query" id="query" rows="4" cols="50" maxlength="200" required >
-
-            </textarea>
-
+            <input type="text" name="query" id="query" placeholder="Enter text here" required>
             <button type="submit" >Translate</button>
         </form>
 
@@ -21,8 +18,7 @@
 
     <div class="bicol-form">
         <form action="">
-            <textarea placeholder="bicol" name="bicol" id="bicol" crows="4" cols="50" maxlength="200" >
-            </textarea>
+            <input type="text" name="bicol" id="bicol" placeholder="Display Dialect words" >
         </form>
 
     </div>
